@@ -94,7 +94,7 @@ for x in list_one:
 	else:
 	    print("It's not strong")
 
-#8. 
+#8.  Create python program where you want to find id in link if link have id print id.
 ------------
 
 9. Write a Python program that implements a decorator to validate function arguments
@@ -125,3 +125,5 @@ for x in list_one:
 	    print("Result:", result)
 	except ValueError as e:
 	    print("Error:", e)
+#10.Write a Python program that implements a decorator to validate function arguments
+length.
