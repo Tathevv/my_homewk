@@ -1,1 +1,62 @@
+# 1.Write a Python program which will remove all zeros from an IP address.
+
+  def remove(ip):
+      split = ip.split('.')
+      splitedd_ip = '.'.join(str(int(i)) for i in split)
+  
+      return splitedd_ip
+  ip_address = "2345.3.034"
+  splitedd_ip = remove(ip_address)
+  
+  print(splitedd_ip)
+
+#2.Given an list of numbers. Find the maximum element in list.Without use max function.
+
+  def max_number(list):
+      max_element = list[0]
+      for num in list:
+          if num > max_element:
+              max_element = num
+  
+      return max_element
+  
+  numbers = [1,2,3,4,7,5,10,32]
+  maximum = max_number(numbers)
+  print(maximum)
+
+#4. Write a program that takes in a string as input, counts and outputs the number of vowels.
+
+    def find_vowel(word):
+        vowels = ['a','e','i','u','o']
+        count = 0
+    
+        for i in word:
+            if i in vowels:
+                count += 1
+    
+        return count
+    
+    word = input("Your word")
+    result = find_vowel(word)
+    print(result)
+
+#5. Write a function. Create the list which elements are products between two neighbours.
+
+    def product_two_neighbours(lst):
+        list = []
+        for i in range(len(lst) -1):
+            list.append(lst[i] * lst[i + 1])
+        return list
+    
+    list = [1,3,5,7,9]
+    result = product_two_neighbours(list)
+    print(result)
+
+#7.Given a list of strings. Find the strings with maximum and minimum lengths in array. Print the sum of their lengths.
+
+
+
+
+
+
 
