@@ -54,9 +54,34 @@
 
 #7.Given a list of strings. Find the strings with maximum and minimum lengths in array. Print the sum of their lengths.
 
+    def find_max_min_length_strings(strings):
+        max_length_string = min_length_string = strings[0]  # Initialize max and min with the first string
+    
+        for string in strings:
+            if len(string) > len(max_length_string):
+                max_length_string = string
+            elif len(string) < len(min_length_string):
+                min_length_string = string
+    
+        return max_length_string, min_length_string
+    
+    strings = ["red", "blue", "grey", "white", "orange"]
+    max_length_string, min_length_string = find_max_min_length_strings(strings)
+    print(max_length_string)
+    print( min_length_string)
+    print(len(max_length_string) + len(min_length_string))
+
+# 10. Define a function which can generate a dictionary where the keys are numbers between 1 and N (both included) and the values are square of keys. The function should print the dict.
+
+    def square(nums):
+        square_dict = {num: num ** 2 for num in range(1, nums + 1)}
+        print(square_dict)
+    
+    nums = 10
+    square(nums)
 
 
 
 
-
-
+    
+    
