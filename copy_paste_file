@@ -1,0 +1,15 @@
+  def copy_files(lyrics, paste):
+      word_lengths = {}  # Initialize word_lengths dictionary inside the function
+  
+      with open(lyrics, 'r') as copy_f:
+          with open(paste, 'w') as paste_f:
+              paste_f.write(copy_f.read())
+  
+      with open(lyrics, 'r') as lyrics_file:
+          lines = lyrics_file.readlines()
+          for line in lines:
+              words = line.split()
+              for word in words:
+                  word_lengths[word] = len(word)
+  
+      return word_lengths  # Return the word_lengths dictionary
