@@ -1,0 +1,10 @@
+// 1. Write a recursive function to determine whether all digits of the number are odd or not.
+
+
+def all_digits_odd(number):
+    digits = str(number)
+    return all(int(digit) % 2 != 0 for digit in digits)
+
+number = 7779957
+
+print(all_digits_odd(number))
