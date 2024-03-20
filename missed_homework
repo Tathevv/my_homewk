@@ -1,0 +1,16 @@
+// Write a Python program which will remove all zeros from an IP address.
+
+    def remove_zeros(ip_address):
+        address = [int(i) for i in ip_address.split('.')]
+        without_zero = [str(i) for i in address if i != 0]
+    
+        new_ip_address = '.'.join(without_zero)
+    
+        return new_ip_address
+    
+    ip_address = "192.168.0.1"
+    new_ip_address = remove_zeros(ip_address)
+    print(ip_address)
+    print(new_ip_address)
+
+
