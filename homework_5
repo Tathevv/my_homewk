@@ -8,3 +8,63 @@ def all_digits_odd(number):
 number = 7779957
 
 print(all_digits_odd(number))
+
+# 2. Write a python function all even number in 10.000 use threading and print time.
+
+    import time
+    import threading
+    
+    def add_nums(start, stop):
+        with open("even_numbers.txt", "a") as even_file:
+            for i in range(start, stop):
+                if i % 2 == 0:
+                    even_file.write(str(i) + '\n')
+    
+    start_time = time.time()
+    t1 = threading.Thread(target=add_nums, args=(1, 3500))
+    t2 = threading.Thread(target=add_nums, args=(3500, 6500))
+    t3 = threading.Thread(target=add_nums, args=(6500, 10000))
+    
+    t1.start()
+    t2.start()
+    t3.start()
+    t1.join()
+    t2.join()
+    t3.join()
+    
+    print("Time:", time.time() - start_time)
+
+# 3. Given N number. Write a recursive function that should print from 1 to N numbers.
+
+    def nums(n):
+        if n > 0:
+            nums(n - 1)
+            print(n)
+    
+    a = 10
+    nums(a)
+
+# 4. Write a python program to find the longest word from the file content.Need to use <try-except> block in the file reading process and print time. 
+    
+  import time
+    
+    def longest_word(file):
+        try:
+            with open(file, 'r') as file:
+                content = file.read()
+                words = content.split()
+                longest_word = max(words, key=len)
+                return longest_word
+        except FileNotFoundError:
+            print(f"Error: File '{file}' not found.")
+    
+    start_time = time.time()
+    file_name = 'words.txt'
+    longest_word = longest_word(file_name)
+    if longest_word:
+        print({longest_word})
+    end_time = time.time()
+    print({end_time - start_time})
+
+
+
