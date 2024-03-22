@@ -1,2 +1,78 @@
 // 1. Write a python class to find max, min num and and sum in your list:
 
+    class counts:
+        def __init__(self, num):
+            self.num = num
+    
+        def max(self):
+            if not self.num:
+                return None
+            max_num = self.num[0]
+            for i in self.num:
+                if i > max_num:
+                    max_num = i
+            return max_num
+    
+        def min(self):
+            if not self.num:
+                return None
+            min_num = self.num[0]
+            for i in self.num:
+                if i < min_num:
+                    min_num = i
+            return min_num
+    
+        def sum(self):
+            sum_num = 0
+            for num in self.num:
+                sum_num += num
+            return sum_num
+    
+    numbers = [3, 5, 6, 2, 8, 10]
+    number = counts(numbers)
+    
+    print(number.max())
+    print(number.min())
+    print(number.sum())
+
+// 2. Write a python class to find two highest values in your dict:
+
+      class highest_values:
+          def __init__(self, dict):
+              self.dict = dict
+      
+          def find_two_highest(self):
+              if not self.dict:
+                  return None
+      
+              sorted_items = sorted(self.dict.items(), key=lambda x: x[1])
+      
+              highest_two_values = sorted_items[-2:]
+      
+              return highest_two_values
+      
+      
+      my_dict = {'a': 10, 'b': 20, 'c': 15, 'd': 25, 'e': 5}
+      
+      two_highest = highest_values(my_dict)
+      
+      print(two_highest.find_two_highest())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
