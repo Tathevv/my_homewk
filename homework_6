@@ -60,19 +60,75 @@
 
 
 
+// 4. Write a Python class named Rectangle constructed by a length and width and a method which will compute the area of a rectangle.
+
+        class Rectangle:
+            def __init__(self, length, width):
+                self.length = length
+                self.width = width
+        
+            def area_rec (self):
+                area = self.length * self.width
+                return area
+        
+        rectangle = Rectangle(5, 10)
+        
+        area = rectangle.area_rec()
+        print(area)
 
 
 
+// 5. Write a python class where we use polymorphism:
+
+
+            class Computer:
+                def type(self):
+                    raise NotImplementedError("error")
+            
+            class Laptop(Computer):
+                def type(self):
+                    return "This is a laptop."
+            
+            
+            class Desktop(Computer):
+                def type(self):
+                    return "This is a desktop computer."
+            
+            
+            def display_type(computer):
+                return computer.type()
+            
+            laptop = Laptop()
+            desktop = Desktop()
+            
+            print("Laptop Specifications:", display_type(laptop))
+            print("Desktop Specifications:", display_type(desktop))
 
 
 
+// 6. Create a class Change:You have 3 methods in your class:
 
 
-
-
-
-
-
+        class Change:
+        
+            def Usd_to_Amd(self, amount):
+                return amount * 485.75
+            def Usd_to_Eur(self, amount):
+                return amount * 0.88
+        
+            def Usd_to_Ru(self, amount):
+                return amount * 74.61
+        
+        changer = Change()
+        
+        amount_usd = 100
+        amount_amd = changer.Usd_to_Amd(amount_usd)
+        amount_eur = changer.Usd_to_Eur(amount_usd)
+        amount_ru = changer.Usd_to_Ru(amount_usd)
+        
+        print(f"{amount_usd} equals to {amount_eur} EUR")
+        print(f"{amount_usd}  equal to {amount_amd} AMD")
+        print(f"{amount_usd} equal to {amount_ru} RU")
 
 
 
