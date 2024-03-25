@@ -1,0 +1,13 @@
+# 1. Create a class which given a year, return the century it is in. The first century spans from the year 1 up to and including the year 100, the second - from the year 101 up to and including the year 200, etc.
+
+    class decide_century:
+        @staticmethod
+        def year_to_century(year):
+            century = (year - 1) // 100 + 1
+            return century
+    
+    year_converter = decide_century()
+    year = 2024
+    century = year_converter.year_to_century(year)
+    print(f" {year} - {century} century ")
+
