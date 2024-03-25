@@ -11,3 +11,33 @@
     century = year_converter.year_to_century(year)
     print(f" {year} - {century} century ")
 
+
+
+# 2. Create a class given the string, check if it is a palindrome. word should be lowercase and 1 ≤ inputString.length ≤ 105
+
+
+
+        class Palindrome:
+            @staticmethod
+            def is_palindrome(input_string):
+                input_string = input_string.lower()
+        
+                return input_string == input_string[::-1]
+        
+        palindrome_checker = Palindrome()
+        input_string = "ara"
+        result = palindrome_checker.is_palindrome(input_string)
+        if result:
+            print(f"'{input_string}' is palindrome.")
+        else:
+            print(f"'{input_string}' is not a palindrome.")
+
+
+3. 
+
+
+
+
+
+
+
