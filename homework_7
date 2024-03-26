@@ -33,8 +33,64 @@
             print(f"'{input_string}' is not a palindrome.")
 
 
-3. 
+# 3. Create a Class which given an list of integers, find the pair of adjacent elements that has the largest product and return that product.
 
+
+        class maxproduct:
+            def __init__(self, nums):
+                self.nums = nums
+            def adjacent_product(self):
+        
+                max_product = self.nums[0] * self.nums[1]
+                for i in range(1, len(self.nums) - 1):
+                    product = self.nums[i] * self.nums[i + 1]
+                    max_product = max(max_product, product)
+        
+                return max_product
+        
+        nums_list = [3, 6, -2, -5, 7, 3]
+        find = maxproduct(nums_list)
+        max_product = find.adjacent_product()
+        print(max_product)
+
+
+# 4. Create a class which given a list of strings, return another list containing all of its longest strings.
+
+
+
+        class longest:
+            def __init__(self, words):
+                self.words = words
+            def find_the_longest(self):
+                max_length = len(max(self.words, key=len))
+                longest_word = [i for i in self.words if len(i) == max_length]
+                return longest_word
+        
+        words = ["green", "blue", "gray", "white", "black", "red"]
+        finder = longest(words)
+        result = finder.find_the_longest()
+        print(result)
+
+# 5. Ticket numbers usually consist of an even number of digits.A ticket number is considered lucky if the sum of the first half of the digits is equal to the sum of the second half.Given a ticket number n, determine if it's lucky or not. Example For n = 1230, the output should be
+
+
+        def lucky(n):
+            ticket_str = str(n)
+        
+            if len(ticket_str) % 2 != 0:
+                return False
+        
+            half = len(ticket_str) // 2
+            first_half = sum(int(i) for i in ticket_str[:half])
+            second_half= sum(int(i) for i in ticket_str[half:])
+        
+            return first_half == second_half
+        
+        ticket_number = 123042
+        is_lucky = lucky(ticket_number)
+        print(is_lucky)
+
+# 6. 
 
 
 
