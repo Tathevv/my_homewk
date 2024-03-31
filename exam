@@ -1,0 +1,52 @@
+import random
+
+questions_answers = {
+    "What is the capital of Afghanistan?": "Kabul",
+    "What is the capital of Albania?": "Tirana",
+    "What is the capital of Algeria?": "Algiers",
+    "What is the capital of Andorra?": "Andorra la Vella",
+    "What is the capital of Angola?": "Luanda",
+    "What is the capital of Antigua and Barbuda?": "St. John's",
+    "What is the capital of Argentina?": "Buenos Aires",
+    "What is the capital of Armenia?": "Yerevan",
+    "What is the capital of Australia?": "Canberra",
+    "What is the capital of Austria?": "Vienna",
+    "What is the capital of Azerbaijan?": "Baku",
+    "What is the capital of The Bahamas?": "Nassau",
+    "What is the capital of Bahrain?": "Manama",
+    "What is the capital of Bangladesh?": "Dhaka",
+    "What is the capital of Barbados?": "Bridgetown",
+    "What is the capital of Belarus?": "Minsk",
+    "What is the capital of Belgium?": "Brussels",
+    "What is the capital of Belize?": "Belmopan",
+    "What is the capital of Benin?": "Porto-Novo",
+    "What is the capital of Bhutan?": "Thimphu",
+    "What is the capital of Bolivia?": "Sucre",
+    "What is the capital of Bosnia and Herzegovina?": "Sarajevo",
+    "What is the capital of Botswana?": "Gaborone",
+    "What is the capital of Brazil?": "Brasília",
+    "What is the capital of Brunei?": "Bandar Seri Begawan",
+    "What is the capital of Bulgaria?": "Sofia",
+    "What is the capital of Burkina Faso?": "Ouagadougou",
+    "What is the capital of Burundi?": "Gitega",
+    "What is the capital of Cambodia?": "Phnom Penh",
+}
+
+questions = list(questions_answers.keys())
+random.shuffle(questions)
+
+correct_answers = 0
+total_questions = len(questions)
+
+for question in questions:
+    print(question)
+
+    user_answer = input("Your answer: ")
+
+    if user_answer.lower() == questions_answers[question].lower():
+        print("Correct!\n")
+        correct_answers += 1
+    else:
+        print("Incorrect. The correct answer is:", questions_answers[question], "\n")
+
+print("You answered", correct_answers, "out of", total_questions, "questions correctly.")
