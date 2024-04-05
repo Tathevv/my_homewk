@@ -35,7 +35,7 @@ def add_country_code(phone_number: str) -> str:
         print(e)
 
 
-2. Check phone number with decorator
+// 2. Check phone number with decorator
 
         def add_country_code_decorator(func):
             def wrapper(phone_number):
