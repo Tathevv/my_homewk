@@ -33,3 +33,48 @@ def add_country_code(phone_number: str) -> str:
         check_phone_number("+37494576866")
     except ValueError as e:
         print(e)
+
+
+2. Check phone number with decorator
+
+        def add_country_code_decorator(func):
+            def wrapper(phone_number):
+                if phone_number.startswith("+374"):
+                    return func(phone_number)
+                elif phone_number.startswith("0"):
+                    phone_number = phone_number[1:]
+                return func("+374" + phone_number)
+        
+            return wrapper
+        
+        
+        def validate_phone_number_decorator(func):
+            def wrapper(phone_number):
+                phone_number = phone_number.strip()
+        
+                if not phone_number.startswith("+374"):
+                    raise ValueError("Phone number should start with +374")
+        
+                if len(phone_number) != 12:
+                    raise ValueError("Phone number should be in this format (+37477123456)")
+        
+                valid_codes = ["77", "93", "94", "56"]
+        
+                if phone_number[4:6] not in valid_codes:
+                    raise ValueError("Digits after +374 are invalid")
+        
+                return func(phone_number)
+        
+            return wrapper
+        
+        
+        @add_country_code_decorator
+        @validate_phone_number_decorator
+        def process_phone_number(phone_number):
+            return phone_number
+        
+        
+        try:
+            print(process_phone_number("094567666"))
+        except ValueError as e:
+            print(e)
