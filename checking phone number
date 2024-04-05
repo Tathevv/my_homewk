@@ -1,0 +1,35 @@
+// 1. Check phone number without decorator
+
+
+def add_country_code(phone_number: str) -> str:
+        if phone_number.startswith("+374"):
+            return phone_number
+        elif phone_number.startswith("0"):
+            phone_number = phone_number[1:]
+        return "+374" + phone_number
+    
+    
+    print(add_country_code("094567666"))
+    # print(add_country_code("+37494567666"))
+    # print(add_country_code("294567666"))
+    
+    
+    def check_phone_number(phone_number: str) -> None:
+        phone_number = phone_number.strip()
+    
+        if not phone_number.startswith("+374"):
+            raise ValueError("Phone number should start with +374")
+    
+        if len(phone_number) != 12:
+            raise ValueError("Phone number should be in this format (+37477123456)")
+    
+        valid_codes = ["77", "93", "94", "56"]
+    
+        if phone_number[4:6] not in valid_codes:
+            raise ValueError("Digits after +374 are invalid")
+    
+    
+    try:
+        check_phone_number("+37494576866")
+    except ValueError as e:
+        print(e)
