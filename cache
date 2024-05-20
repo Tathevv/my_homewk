@@ -1,0 +1,60 @@
+// 1. create cache  for dictionary for 5 seconds
+
+import time
+
+class CacheDict:
+    def __init__(self):
+        self.cache = {}
+    
+    def set(self, key, value, timeout=5):
+        self.cache[key] = {'value': value, 'expiry': time.time() + timeout}
+    
+    def get(self, key):
+        if key in self.cache:
+            item = self.cache[key]
+            if time.time() < item['expiry']:
+                return item['value']
+            else:
+                del self.cache[key] 
+        return None
+
+cache_dict = CacheDict()
+cache_dict.set('key1', 'value1')  
+print(cache_dict.get('key1')) 
+time.sleep(6) 
+print(cache_dict.get('key1'))
+
+
+// 2 create cash for fibonachi for 5 secs
+// (fast fibonachi)
+  
+import functools
+import time
+
+
+@functools.lru_cache(maxsize=None)
+def fib(n):
+    if n <= 1:
+        return n
+    return fib(n - 1) + fib(n - 2)
+
+
+def cached_fib(n):
+    if n < 0:
+        raise ValueError("Input must be a non-negative integer.")
+
+    cached_result = fib(n)
+    if cached_result is not None:
+        return cached_result
+
+  
+    result = fib(n)
+    fib.cache_clear() 
+    time.sleep(5)  
+    return result
+
+
+start_time = time.time()
+print(cached_fib(10))  
+end_time = time.time()
+print(f"Elapsed time: {end_time - start_time} seconds")
